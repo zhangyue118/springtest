@@ -17,13 +17,17 @@ public class IOCTest {
         System.out.println(user);
     }
 
+    //FactoryBean
     @Test
     public void test2(){
         AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
+        //ReentrantLock
         System.out.println(context.getBean("myFactoryBean"));
+        //MyFactoryBean
         System.out.println(context.getBean("&myFactoryBean"));
     }
 
+    //@Import
     @Test
     public void test3(){
         AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
