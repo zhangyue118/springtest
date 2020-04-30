@@ -42,6 +42,7 @@ public class IOCTest {
         DefaultListableBeanFactory defaultListableBeanFactory = context.getDefaultListableBeanFactory();
         RootBeanDefinition rootBeanDefinition=new RootBeanDefinition(Fox.class);
         defaultListableBeanFactory.registerBeanDefinition("fox",rootBeanDefinition);
+        rootBeanDefinition.getPropertyValues().add("name","zhang");
         System.out.println(context.getBean(Fox.class));
     }
 
